@@ -1,0 +1,101 @@
+documentclass[onecolumn]{article}
+%usepackage{url}
+%usepackage{algorithmic}
+usepackage[a4paper]{geometry}
+usepackage{datetime}
+usepackage[margin=2em, font=small,labelfont=it]{caption}
+usepackage{graphicx}
+usepackage{mathpazo} % use palatino
+usepackage[scaled]{helvet} % helvetica
+usepackage{microtype}
+usepackage{amsmath}
+usepackage{subfigure}
+% Letterspacing macros
+newcommand{spacecaps}[1]{textls[200]{MakeUppercase{#1}}}
+newcommand{spacesc}[1]{textls[50]{textsc{MakeLowercase{#1}}}}
+
+title{spacecaps{Assignment Report 1 Process and Thread Implementation} normalsize spacesc{CENG2034, Operating Systems} }
+
+author{Murat Gunmuratgun@posta.mu.edu.tr}
+%date{todaycurrenttime}
+date{today}
+
+begin{document}
+maketitle
+
+
+section{Introduction}
+Modern computers have the capability to execute multiple tasks at the same time because the technology is developing and the number of cores in the processors is increasing. This increase continues today, and due to the competition among processor manufacturers, the number of cores in processors has also increased.In this experiment, we will check the status of several sites requested from us using the requests library in Python. While doing these checks, we will use multi-cores and examine the effect of multi-cores on the program's time.
+
+section{Assignments}
+Python libraries were used while writing this script. These libraries are os, sys, multiprocessing, requests, threading and multiprocessing.dummy. 
+newline
+
+The os library was used to get the first requested PID in the script. This step was also performed on Windows 10 and it was seen that process id can be obtained on Windows operating system by using Python os library. But the script was written on macOs.
+newline
+
+In the second matter, the operating system was checked. This check was done using the sys library in Python, and the loadavg printed using os library after checking process.
+newline
+
+In the third matter, using the os library, loadavg value and cpu core number were compared. The purpose of this comparison is to prevent the scrip from having more loads if the average load value is too high, and to terminate the scripting operation, since the average load on the computer cannot be more than the core number can handle. The sys library was used for this termination.
+newline
+
+In the last matter, the requests library in Python was used to check the status of the sites requested. This check was done multiple times using one and multi-cores, and the running times of the program were taken. Threading and multiprocessing.dummy libraries were used for multi-core use.
+
+
+subsection{Assignment 2.1}
+
+An extra control block has been added since the number of cores may not be equal in every system. The purpose of this control block is to ensure that the script runs fastest, and its job checks the number of cores in the system it is running, and if the number of cores in the system is more than 5, which is the fastest number of cores that our script runs, it runs the desired block of the script in 5 cores.
+
+subsection{Assignment 2.2}
+
+While performing these tests, the following systems were used
+newline
+Dell Inspiron 7567 Notebook
+newline
+4 Core  8 Thread i7 7700HQ CPU
+newline
+16 GB DDR4 2400 Mhz Memory (1 Channel)
+newline
+MacOs Mohave 10.14.6 (Hackintosh)(Dual Boot with Windows)
+newline
+16 MBPS Download 1 MBPS Upload Internet Connection
+
+begin{figure}[h]
+    centering
+    includegraphics[width=12cm]{assetsMacOs Hardware.jpeg}
+    caption{System Hardware}
+    label{figMacOS}
+end{figure}
+
+section{Results}
+
+The data of the tests on single and multi-thread use are given in the 2nd figure. According to these data; Multiple thread use is very advantageous compared to single thread use, but consumes more resources.
+In addition, another information we understand from this table is the number of threads we need for the best timing is equal to the number of work to be done.
+
+begin{figure}[t]
+    centering
+    includegraphics[width=12cm]{assetsThreadTest.PNG}
+    caption{Multi-Thread Run Times}
+    label{figRun Time Table}
+end{figure}
+
+begin{figure}[t]
+    centering
+    includegraphics[width=12cm]{assetscmdline.png}
+    caption{Image from run the script using 5 thread}
+    label{figCommand Line}
+end{figure}
+
+
+newpage
+section{Conclusion}
+As a result, according to the data obtained, it was revealed that using multiple threads saves a lot of time compared to using single threads. In addition, it has been determined that creating threads as much as the amount of work to be done is the most profitable method in terms of time, but it has been observed that this method spends a lot of resources even though it saves time.
+
+
+nocite{}
+bibliographystyle{plain}
+bibliography{references}
+
+end{document}
+
