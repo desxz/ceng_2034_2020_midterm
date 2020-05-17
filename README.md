@@ -39,4 +39,12 @@ Best Run Time With 5 Threads:
 
 ![](https://github.com/desxz/ceng_2034_2020_midterm/blob/master/Ekran%20Resmi%202020-04-28%2015.39.51%201.png)
 
-  
+Hardware and Os:
+ + Dell Inspiron 7567 Notebook
+ + 4 Core  8 Thread i7 7700HQ CPU
+ + 16 GB DDR4 2400 Mhz Memory (1 Channel)
+ + MacOs Mohave 10.14.6 (Hackintosh)(Dual Boot with Windows)
+ 
+ İmage:
+ 
+![MacOs Hardware](https://user-images.githubusercontent.com/63814984/82143519-38bc7500-984d-11ea-827d-b2371d7c5586.jpeg)
