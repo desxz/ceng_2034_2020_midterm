@@ -35,7 +35,7 @@ def statusControl(url):
 
 
 def multiThreadUse():                                                               #Using multithread
-    if multiprocessing.cpu_count() > len(urls):                                     #if cpu_count higher then urls count (threads count < 5 ) use threads per every url.
+    if multiprocessing.cpu_count() > len(urls):                                     #if cpu_count higher then urls count (threads count > 5 ) use threads per every url.
         for i in urls:
             Threading.Thread(target=statusControl, args=(i,)).start()
     else:                                                                           #if cpu_count less then urls count (threads count < 5 ) use all threads in cpu.
